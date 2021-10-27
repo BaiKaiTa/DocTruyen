@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarmanhinhchinh"
+                app:title="Kho Truyện"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"></ViewFlipper>
+
+            <LinearLayout
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                android:textColor="#F44336"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_margin="5dp"
+                android:text="Mới nhất"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TextView>
+
+            <ListView
+                android:id="@+id/listviewNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_gravity= "start"
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.google.android.material.navigation.NavigationView>
+        <ListView
+            android:id="@+id/listviewthongtin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+        <ListView
+            android:id="@+id/listviewmanhinhchinh"
+            android:layout_marginTop="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ListView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</LinearLayout>
