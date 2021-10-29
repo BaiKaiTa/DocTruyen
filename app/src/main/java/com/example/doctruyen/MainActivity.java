@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,11 +18,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.doctruyen.adapter.adapterTruyen;
+import com.example.doctruyen.adapter.adapterchuyenmuc;
+import com.example.doctruyen.adapter.adapterthongtin;
 import com.example.doctruyen.database.databasedoctruyen;
+import com.example.doctruyen.model.TaiKhoan;
 import com.example.doctruyen.model.Truyen;
+import com.example.doctruyen.model.chuyenmuc;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
@@ -40,7 +46,15 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Truyen> TruyenArraylist;
     adapterTruyen adapterTruyen;
+
+    adapterthongtin adapterthongtin;
+    adapterchuyenmuc adapterchuyenmuc;
+
+    ArrayList<chuyenmuc> chuyenmucArrayList;
+    ArrayList<TaiKhoan> taiKhoanArrayList;
+
     databasedoctruyen databasedoctruyen;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +83,28 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("tentruyen",tent);
                 intent.putExtra("noidung",noidungt);
                 startActivity(intent);
+            }
+        });
+
+        //bắt click item cho listview
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0){
+                    if (i == 2){
+
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Bạn không có quyền đăng bài", Toast.LENGTH_SHORT).show();
+                        Log.e("Đăng bài : ", "Bạn không có quyền");
+                    }
+                }
+                else if (position == 1){
+
+                }
+                else if (position == 2) {
+                    finish();
+                }
             }
         });
     }
@@ -159,5 +195,20 @@ public class MainActivity extends AppCompatActivity {
         }
         cursor1.moveToFirst();
         cursor1.close();
+
+        //thông tin
+        taiKhoanArrayList = new ArrayList<>();
+        taiKhoanArrayList.add(new TaiKhoan(tentaikhoan,email));
+
+        adapterthongtin = new adapterthongtin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
+        listViewThongTin.setAdapter(adapterthongtin);
+        //chuyên mục
+        chuyenmucArrayList = new ArrayList<>();
+        chuyenmucArrayList.add(new chuyenmuc("Đăng bài", R.drawable.ic_baseline_post_add_24));
+        chuyenmucArrayList.add(new chuyenmuc("Thông tin", R.drawable.ic_face));
+        chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.ic_login));
+
+        adapterchuyenmuc = new adapterchuyenmuc(this,R.layout.chuyenmuc,chuyenmucArrayList);
+        listview.setAdapter(adapterchuyenmuc);
     }
 }

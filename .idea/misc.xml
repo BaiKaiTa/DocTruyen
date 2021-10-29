@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DocTruyen/app/src/main/res/drawable/ic_baseline_post_add_24.xml" value="0.23703703703703705" />
         <entry key="..\:/DocTruyen/app/src/main/res/drawable/ic_email.xml" value="0.25462962962962965" />
         <entry key="..\:/DocTruyen/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/DocTruyen/app/src/main/res/layout/activity_man_dang_ky.xml" value="0.2383485309017224" />
         <entry key="..\:/DocTruyen/app/src/main/res/layout/activity_man_dang_nhap.xml" value="0.2383485309017224" />
         <entry key="..\:/DocTruyen/app/src/main/res/layout/activity_man_noi_dung.xml" value="0.15932117527862208" />
         <entry key="..\:/DocTruyen/app/src/main/res/layout/activity_man_tim_kiem.xml" value="0.15932117527862208" />
+        <entry key="..\:/DocTruyen/app/src/main/res/layout/chuyenmuc.xml" value="0.22962962962962963" />
+        <entry key="..\:/DocTruyen/app/src/main/res/layout/navigation_thongtin.xml" value="0.33" />
         <entry key="..\:/DocTruyen/app/src/main/res/layout/newtruyen.xml" value="0.15982776089159068" />
         <entry key="..\:/DocTruyen/app/src/main/res/menu/mymenu.xml" value="0.16018518518518518" />
         <entry key="..\:/DocTruyen/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25462962962962965" />
