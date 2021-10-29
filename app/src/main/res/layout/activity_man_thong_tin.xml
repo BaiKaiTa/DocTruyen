@@ -5,21 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ManNoiDung">
+    tools:context=".ManThongTin">
 
     <TextView
-        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#3F51B5"
         android:textStyle="bold"
-        android:gravity="center"
-        android:text="Tên Truyện"
-        android:id="@+id/TenTruyen"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"></TextView>
+        android:layout_gravity="center"
+        android:textSize="40sp"
+        android:text="Thông tin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
     <TextView
-        android:scrollbars="vertical"
-        android:textSize="20sp"
-        android:layout_margin="20dp"
-        android:id="@+id/NoiDung"
+        android:id="@+id/textviewThongTin"
+        android:padding="20dp"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></TextView>
 </LinearLayout>
