@@ -91,10 +91,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0){
-                    if (i == 2){
+                    if (i == 0){
                         Intent intent = new Intent(MainActivity.this,ManAdmin.class);
+                        //gửi id tk qua màn admin
+                        intent.putExtra("Id",idd);
                         startActivity(intent);
-
                     }
                     else {
                         Toast.makeText(MainActivity.this, "Bạn không có quyền đăng bài", Toast.LENGTH_SHORT).show();

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocTruyen">
         <activity
+            android:name=".ManDangBai"
+            android:exported="false" />
+        <activity
             android:name=".ManAdmin"
             android:exported="false" />
         <activity

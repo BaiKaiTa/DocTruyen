@@ -10,6 +10,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.example.doctruyen.model.TaiKhoan;
+import com.example.doctruyen.model.Truyen;
 
 public class databasedoctruyen extends SQLiteOpenHelper {
 
@@ -47,8 +48,8 @@ public class databasedoctruyen extends SQLiteOpenHelper {
     //1. Admin 2. User
     //source sqlite từ https://drive.google.com/file/d/1ACaLjurQwCvaE15FbBVb-qcMd0kqwq3F/view
 
-    private String SQLQuery2 = "INSERT INTO TaiKhoan VAlUES (null,'admin','admin','admin@gmail.com',1)";
-    private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'trung','trung','trung@gmail.com',2)";
+    private String SQLQuery2 = "INSERT INTO TaiKhoan VAlUES (null,'admin','admin','admin@gmail.com',2)";
+    private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'trung','trung','trung@gmail.com',1)";
 
     private String SQLQuery4 = "INSERT INTO truyen VALUES (null,'Rùa và Thỏ','Phần 1:\n" +
             "\n" +
@@ -258,6 +259,27 @@ public class databasedoctruyen extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor res = db.rawQuery("SELECT * FROM " + TABLE_TRUYEN, null);
+        return res;
+    }
+
+    //thêm truyện
+    public void AddTruyen(Truyen truyen){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TEN_TRUYEN,truyen.getTenTruyen());
+        values.put(NOI_DUNG,truyen.getNoiDung());
+        values.put(IMAGE,truyen.getAnh());
+        values.put(ID_TAI_KHOAN,truyen.getID_TK());
+
+        db.insert(TABLE_TAIKHOAN, null,values);
+        db.close();
+    }
+
+    //xoá truyện
+    public int Delete(int i){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int res = db.delete(TABLE_TRUYEN,ID_TRUYEN+" = "+i, null);
         return res;
     }
 }
