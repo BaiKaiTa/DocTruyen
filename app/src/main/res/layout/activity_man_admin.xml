@@ -8,9 +8,16 @@
     tools:context=".ManAdmin">
 
     <Button
-        android:layout_gravity="center"
         android:id="@+id/btnThemTruyen"
-        android:text="Thêm truyện"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Thêm truyện"></Button>
+
+    <Button
+        android:id="@+id/btntrovett"
+        android:text="Trở về"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></Button>
     <ListView

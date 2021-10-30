@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class ManAdmin extends AppCompatActivity {
 
     ListView listView;
-    Button buttonThem;
+    Button buttonThem, btntrovett;
 
     ArrayList<Truyen> TruyenArrayList;
     adapterTruyen adapterTruyen;
@@ -34,6 +34,14 @@ public class ManAdmin extends AppCompatActivity {
 
         listView = findViewById(R.id.listviewAdmin);
         buttonThem = findViewById(R.id.btnThemTruyen);
+        btntrovett = findViewById(R.id.btntrovett);
+
+        btntrovett.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         intnList();
 

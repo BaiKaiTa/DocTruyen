@@ -47,4 +47,11 @@
         android:text="Đăng bài"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></Button>
+    <Button
+        android:id="@+id/btntrovedb"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Trở về"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
 </LinearLayout>

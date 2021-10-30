@@ -16,7 +16,7 @@ import com.example.doctruyen.model.Truyen;
 public class ManDangBai extends AppCompatActivity {
 
     EditText edtTenTruyen, edtNoiDung, edtAnh;
-    Button btnDangBai;
+    Button btnDangBai, btntrovedb;
     databasedoctruyen databasedoctruyen;
 
     @Override
@@ -28,8 +28,15 @@ public class ManDangBai extends AppCompatActivity {
         edtTenTruyen = findViewById(R.id.dbTenTruyen);
         edtNoiDung = findViewById(R.id.dbNoiDung);
         btnDangBai = findViewById(R.id.dbangBai);
+        btntrovedb = findViewById(R.id.btntrovedb);
 
         databasedoctruyen = new databasedoctruyen(this);
+        btntrovedb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         btnDangBai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
