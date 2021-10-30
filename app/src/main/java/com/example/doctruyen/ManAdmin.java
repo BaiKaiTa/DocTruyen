@@ -2,6 +2,7 @@ package com.example.doctruyen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -51,6 +52,21 @@ public class ManAdmin extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                DialogDelete(position);
+                return false;
+            }
+        });
+    }
+    //hiển thị cửa số xoá
+    private void DialogDelete(int position){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialogdelete);
+        dialog.setCanceledOnTouchOutside(false);
+        Button btnYes = dialog.findViewById(R.id.btnYes);
+        Button btnNo = dialog.findViewById(R.id.btnNo);
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 int idtruyen = TruyenArrayList.get(position).getID();
                 //xoá dữ liệu
                 databasedoctruyen.Delete(idtruyen);
@@ -59,10 +75,17 @@ public class ManAdmin extends AppCompatActivity {
                 finish();
                 startActivity(intent);
                 Toast.makeText(ManAdmin.this, "Xoá truyện thành công", Toast.LENGTH_SHORT).show();
-                return false;
             }
         });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
     }
+
     //gán dữ liệu cho listview
     private void intnList() {
         TruyenArrayList = new ArrayList<>();

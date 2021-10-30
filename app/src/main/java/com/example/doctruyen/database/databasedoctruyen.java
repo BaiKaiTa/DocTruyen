@@ -45,7 +45,6 @@ public class databasedoctruyen extends SQLiteOpenHelper {
             TABLE_TAIKHOAN+"("+ID_TAI_KHOAN+"))";
 
     //Dữ liệu vào bảng tài khoản
-    //1. Admin 2. User
     //source sqlite từ https://drive.google.com/file/d/1ACaLjurQwCvaE15FbBVb-qcMd0kqwq3F/view
 
     private String SQLQuery2 = "INSERT INTO TaiKhoan VAlUES (null,'admin','admin','admin@gmail.com',2)";
@@ -272,7 +271,7 @@ public class databasedoctruyen extends SQLiteOpenHelper {
         values.put(IMAGE,truyen.getAnh());
         values.put(ID_TAI_KHOAN,truyen.getID_TK());
 
-        db.insert(TABLE_TAIKHOAN, null,values);
+        db.insert(TABLE_TRUYEN, null,values);
         db.close();
     }
 

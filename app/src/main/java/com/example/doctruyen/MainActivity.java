@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         databasedoctruyen = new databasedoctruyen(this);
 
         Intent intentpq = getIntent();
-        int i = intentpq.getIntExtra("phang", 0);
+        int i = intentpq.getIntExtra("phanq", 0);
         int idd = intentpq.getIntExtra("idd",0);
         email = intentpq.getStringExtra("email");
         tentaikhoan = intentpq.getStringExtra("tentaikhoan");
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0){
-                    if (i == 0){
+                    if (i == 2){
                         Intent intent = new Intent(MainActivity.this,ManAdmin.class);
                         //gửi id tk qua màn admin
                         intent.putExtra("Id",idd);
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Bạn không có quyền đăng bài", Toast.LENGTH_SHORT).show();
                         Log.e("Đăng bài : ", "Bạn không có quyền");
                     }
-                }// lấy thông tin truyện
+                }//thông tin
                 else if (position == 1){
                     Intent intent = new Intent(MainActivity.this,ManThongTin.class);
                     startActivity(intent);
